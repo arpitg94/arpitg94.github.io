@@ -9,10 +9,19 @@
     border: 1px solid black;
     box-sizing: border-box;
     outline: none;
+    background-color: dodgerblue;
 }
 
 .cell:focus{
 
-    border: 3px solid dodgerblue;
+    border: 3px solid black;
+    text-decoration-color: antiquewhite;
+    background-color: aliceblue;
+}
 
+.name{
+    display: flex;
+    font-size: large;
+    font-family: Cambria;
+    align-items: center;
 }
