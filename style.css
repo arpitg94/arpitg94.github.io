@@ -1,0 +1,18 @@
+.cell-row {
+    display: flex;
+
+}
+
+.cell {
+    width: 70px;
+    height: 40px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.cell:focus{
+
+    border: 3px solid dodgerblue;
+
+}
