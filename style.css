@@ -1,27 +1,49 @@
-.cell-row {
-    display: flex;
-
+body {
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff; /* White background */
 }
 
-.cell {
-    width: 70px;
-    height: 40px;
-    border: 1px solid black;
-    box-sizing: border-box;
-    outline: none;
-    background-color: dodgerblue;
+.container {
+  margin: 50px auto;
+  padding: 30px;
+  border: 5px solid #f7e283; /* Mustard yellow border */
+  border-radius: 10px; /* Rounded corners */
+  max-width: 800px; /* Content width limit */
 }
 
-.cell:focus{
-
-    border: 3px solid black;
-    text-decoration-color: antiquewhite;
-    background-color: aliceblue;
+header {
+  text-align: center;
 }
 
-.name{
-    display: flex;
-    font-size: large;
-    font-family: Cambria;
-    align-items: center;
+h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 1.2em;
+  margin-top: 0;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8em;
+  margin-top: 20px;
 }
