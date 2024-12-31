@@ -1,16 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arpit Kumar Gahlot - Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=SUSE&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multilingual Website</title>
+    <style>
+        body { font-family: sans-serif; }
+        .hidden { display: none; }
+        .lang-button {
+          padding: 5px 10px;
+          margin: 5px;
+          border: 1px solid #ccc;
+          cursor: pointer;
+        }
+        .lang-button.active {
+          background-color: #eee;
+        }
+    </style>
 </head>
 <body>
-   <h1>
-     Website under maintenance. Will be back soon.
-   </h1>
+
+    <div id="language-buttons">
+        <button class="lang-button active" data-lang="en">English</button>
+        <button class="lang-button" data-lang="hi">हिंदी</button>
+        <button class="lang-button" data-lang="ta">தமிழ்</button>
+    </div>
+
+    <div id="content">
+        <div id="en-content" class="lang-content">
+            <h1>Welcome!</h1>
+            <p>This is the English version of the website.</p>
+            <p>Some more English text.</p>
+        </div>
+        <div id="hi-content" class="lang-content hidden">
+            <h1>स्वागत है!</h1>
+            <p>यह वेबसाइट का हिंदी संस्करण है।</p>
+            <p>कुछ और हिंदी पाठ।</p>
+        </div>
+        <div id="ta-content" class="lang-content hidden">
+            <h1>வரவேற்பு!</h1>
+            <p>இது வலைத்தளத்தின் தமிழ் பதிப்பு.</p>
+            <p>மேலும் சில தமிழ் உரை.</p>
+        </div>
+    </div>
+
+    <script>
+        const langButtons = document.querySelectorAll('.lang-button');
+        const langContents = document.querySelectorAll('.lang-content');
+
+        langButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const lang = button.dataset.lang;
+
+                // Remove 'active' class from all buttons
+                langButtons.forEach(btn => btn.classList.remove('active'));
+                // Add 'active' class to the clicked button
+                button.classList.add('active');
+
+                langContents.forEach(content => {
+                    if (content.id === `${lang}-content`) {
+                        content.classList.remove('hidden');
+                    } else {
+                        content.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+
 </body>
+</html>
